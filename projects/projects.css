@@ -1,0 +1,455 @@
+.separator {
+    background-color: #fff;
+    background-image: linear-gradient(white,#fbfbfc);
+    background-position: bottom;
+    padding: 80px 0;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.grey-background {
+    background-color: #f6f6f6;
+    padding: 80px 0;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.black-background {
+    background-color: #000000;
+    padding: 80px 0;
+    max-width: 1600px;
+    margin: auto;
+}
+
+
+/* ----------------------------------------------------- Hero ----------------------------------------------------- */
+#project-hero-header {
+    color: #fff;
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
+    font-size: 8rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    clear: left;
+}
+
+.panel {
+    margin: auto;
+    min-height: 90vh;
+    padding: 80px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+    /* outline: 10px solid hotpink; */
+    /* turn above on to see the edge of panels */
+}
+
+.color-blue {
+    background-color: #275efe;
+}
+
+.color-white {
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 950px) {
+    #project-hero-header {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #project-hero-header {
+        font-size: 80px;
+    }
+}
+
+
+/* --------------------------------------------------- Paragraph --------------------------------------------------- */
+.paragraph {
+    width: 60%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+#white-panel {
+    max-width: 1600px;
+    min-height: unset;
+}
+
+.paragraph p {
+    font-size: 22px;
+}
+
+
+@media screen and (max-width: 950px) {
+    .paragraph p {
+        font-size: 19px;
+    }
+    .paragraph {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .paragraph {
+        width: 95%;
+    }
+}
+
+
+
+/* ------------------------------------------------ Summary Numbers ------------------------------------------------ */
+#number-summary-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.number-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.number-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 40px 0 40px;
+    min-width: 100px;
+}
+
+.number {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.number-description {
+    font-weight: 100;
+    font-size: 19px;
+    color: #939da8;
+}
+
+@media screen and (max-width: 600px) {
+    .number {
+        font-size: 30px;
+    }
+    .number-description {
+        font-size: 16px;
+    }
+    .number-list {
+        margin: 50px 25px 0 25px;
+    }
+}
+
+
+
+/* ------------------------------------------------- Bullet Points ------------------------------------------------ */
+#bullet-points-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#bullet-points-text {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+
+#listing-header {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 0 auto;
+    font-weight: bold;
+}
+
+.bullet-point-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 19px;
+    font-weight: 100;
+    margin-top: 30px;
+    margin-left: 5%;
+}
+
+.bullet-point-wrapper ul {
+    list-style: none;
+    line-height: 1.5;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.bullet-point-wrapper ul li {
+    width: 350px;
+    margin: 18px 0;
+}
+
+.bullet-point-wrapper ul li::before {
+    content: "\2022";
+    color: #275efe;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+@media screen and (max-width: 600px) {
+    #listing-header {
+        font-size: 30px;
+    }
+    .bullet-point-wrapper {
+        margin-left: 0px;
+    }
+    .bullet-point-wrapper ul li {
+        width: 100%;
+    }
+    #bullet-points-text {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    #no-margin-top {
+        margin-top: 0px;
+    }
+}
+
+
+
+/* ----------------------------------------------------- Media ---------------------------------------------------- */
+.media-article {
+    margin: auto;
+    width: 50%;
+}
+
+.media-headline {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+.read-article {
+    margin-top: 25px;
+}
+
+.underline-article {
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    color: #2B2A35;
+}
+
+.read-article:hover .underline-article {
+    border-bottom: 2px solid #2B2A35;
+}
+
+.arrow-article {
+    width: 20px;
+    position: relative;
+    top: -2px;
+    left: 6px;
+    transition: all linear 300ms;
+}
+
+.read-article:hover .arrow-article {
+    transform: translateX(6px);
+}
+
+hr {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 50px auto;
+    width: 50%;
+    border-top: 1px solid #939da8;
+}
+
+#media-logo {
+    max-height: 24px;
+    max-width: 110px;
+}
+
+@media screen and (max-width: 600px) {
+    .media-article, hr {
+        width: 100%;
+    }
+    .media-headline {
+        font: 19px;
+    }
+    .underline-article {
+        font-size: 16px;
+    }
+    .arrow-article {
+        width: 16px;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    .media-article, hr {
+        width: 90%;
+    }
+    .media-headline {
+        font-size: 22px;
+    }
+}
+
+
+
+/* ------------------------------------------------ Company Logos ------------------------------------------------ */
+#company-logos-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.company-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 85%;
+}
+
+.company-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    min-width: 300px;
+    margin: 40px auto 40px auto;
+}
+
+.speaker-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    min-width: 300px;
+    margin: 40px auto 40px auto;
+}
+
+.speaker-img img {
+    width: 60%;
+    margin-bottom: 5px;
+}
+
+#speaker-role {
+    text-align: center;
+}
+
+
+.company-logo img {
+    width: 65%;
+}
+
+@media screen and (max-width: 600px) {
+    .company-logo {
+        margin: 30px auto 30px auto;
+    }
+}
+
+
+
+/* ------------------------------------------------ Image Collage ------------------------------------------------ */
+.container-inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 3%;
+    text-align: center;
+}
+
+.image-grid {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.image-grid .col.flex-1 {
+    flex: 1;
+}
+
+.image-grid .col {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-grid .col.flex-1-5 {
+    flex: 1.54;
+}
+
+.image-grid .col {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-grid img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.image-grid .col .row {
+    display: flex;
+    flex-direction: row;
+}
+
+.image-grid .col .row img:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.image-grid .col .row img {
+    width: calc(50% - .5rem);
+}
+
+.image-grid .col .row img {
+    width: calc(50% - .5rem);
+}
+
+.image-grid .col:not(:last-child) {
+    padding-right: 1rem;
+}
+
+
+
+/* ------------------------------------------------ Single Video ------------------------------------------------ */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-solo-header {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}

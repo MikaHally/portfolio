@@ -1,0 +1,204 @@
+/* ------------------------------------------------ Navigation Bar ------------------------------------------------ */
+nav {
+    height: 70px;
+    max-width: 1400px;
+    margin: auto;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(227,227,227,1);
+    -moz-box-shadow: 0px 1px 0px 0px rgba(227,227,227,1);
+    box-shadow: 0px 1px 0px 0px rgba(227,227,227,1);
+}
+
+.logo-name {
+    height: 100%;
+    float: left;
+    margin-left: 10%;
+    margin-top: 16px;
+    color: #2B2A35;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links li a {
+    color: #2B2A35;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+
+
+/* --------------------- Navigation Underline Animation --------------------- */
+.nav-links {
+    list-style-type: none;
+    margin: 0 9% 0 0;
+    text-align: center;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.top-nav-links {
+    color: #275efe;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 8px;
+}
+
+.top-nav-links:before, .top-nav-links:after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #275efe;
+}
+
+.top-nav-links:before {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+}
+
+.top-nav-links:after {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+}
+.top-nav-links:hover:before, .top-nav-links:hover:after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.top-nav-links:hover:before {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+}
+
+.top-nav-links:hover:after {
+    transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+}
+
+
+/* ------------------------------------------------- Media Queries ------------------------------------------------- */
+@media screen and (max-width: 868px) {
+    .line {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background: #275efe;
+        margin: 5px;
+        border-radius: 10px;
+        transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.42s;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .hamburger {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 40%;
+        transform: translate(-55%, -50%);
+        z-index: 2;
+    }
+
+    .hamburger.close {
+        position: fixed;
+        top: 28px;
+    }
+
+    .logo-name {
+        margin-left: 7%;
+        margin-top: 18px
+    }
+
+    .nav-links {
+        padding: 30vh 0;
+        position: fixed;
+        background: #275efe;
+        z-index: 1;
+        height: 100vh;
+        overflow: hidden;
+        width: 100%;
+        justify-content: space-around;
+        flex-direction: column;
+        clip-path: circle(100px at 115% -15%);
+        -webkit-clip-path: circle(100px at 115% -15%);
+        transition: all 0.42s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1600px at 90% -10%);
+        -webkit-clip-path: circle(1600px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff;
+        margin-left: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.8s ease 0.42s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.8s ease 0.42s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.8s ease 0.42s;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+
+    .line01 {
+        top: 19%;
+    }
+
+    .line02 {
+        top: 49%;
+    }
+
+    .line03 {
+        top: 79%;
+    }
+
+    .menu.close .line01 {
+        transform:rotate(45deg);
+        top:49%;
+        background: white;
+    }
+
+    .menu.close .line02, .menu.close .line03 {
+        transform:rotate(-45deg);
+        top:49%;
+        background: white;
+    }
+}
+

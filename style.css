@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: Helvetica,Arial,sans-serif;
+    transition: background-color 1s ease;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #2B2A35;
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #2B2A35;
+}
+
+p {
+    font-size: 19px;
+    font-weight: 100;
+    line-height: 1.8;
+    color: #2B2A35;
+}
+
+p, h1, h2, h3, .hero-text, a {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+img {
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 4rem, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    animation: fadeInUp .3s ease-out;
+    animation-fill-mode: both;
+}
+
+/* ----------------------------------------------- Loading Animation ----------------------------------------------- */
+.loader-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #275efe;
+    animation: loader 2s infinite ease;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #275efe;
+    animation: loader-inner 2s infinite ease-in;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+
+
+/* ----------------------------------------------------- Hero ----------------------------------------------------- */
+.hero {
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clear: both;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.hero video {
+    width: 66%;
+    max-width: 924px;
+    margin-top: 20px;
+}
+
+.hero-text {
+    max-width: 1400px;
+    margin: auto;
+    background: url();
+    background-size: contain;
+    background-position: top left;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 10rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-header {
+    margin-top: 30px;
+    width: 60%;
+    text-align: center;
+}
+
+.hero-sub-header {
+    margin: 20px 0 24px 0;
+    width: 50%;
+    text-align: center;
+}
+
+.button {
+    --background: #275efe;
+    --text: #fff;
+    --font-size: 16px;
+    --duration: 0.44s;
+    --move-hover: -4px;
+    --shadow: 0 2px 8px -1px rgba(39, 94, 254, 0.32);
+    --shadow-hover: 0 4px 20px -2px rgba(39, 94, 254, 0.5);
+    --font-shadow: var(--font-size);
+    padding: 16px 32px;
+    font-weight: 500;
+    line-height: var(--font-size);
+    border-radius: 5px;
+    display: block;
+    outline: none;
+    text-decoration: none;
+    font-size: var(--font-size);
+    letter-spacing: 0.5px;
+    background: var(--background);
+    border:none;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transform: translateY(var(--y));
+    transition: transform var(--duration) ease, box-shadow var(--duration) ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    --y: var(--move-hover);
+    --shadow: var(--shadow-hover);
+}
+
+
+
+/* --------------------------------------------------- About Me --------------------------------------------------- */
+.container {
+     background: linear-gradient(#f8f8f8 0,#fff 100%);
+     background-position: top;
+     max-width: 1600px;
+     margin: auto;
+}
+
+#about-section {
+    background: linear-gradient(#f8f8f8 0,#fff 5%);
+    background-position: top;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.about-header {
+    margin: 0 auto 0 auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.avatar-video {
+    width: 38%;
+    margin-right: 2%;
+    margin-left: 10%;
+    min-width: 412px;
+}
+
+#aboutme {
+    margin-top: 0;
+}
+
+.avatar-video img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.biography-text {
+    width: 38%;
+    margin-right: 10%;
+    margin-left: 2%;
+}
+
+.biography-text h2 {
+    margin-bottom: 20px;
+}
+
+.biography-text p {
+    margin-bottom: 0;
+}
+
+
+
+/* ------------------------------------------------ Work & Projects ------------------------------------------------ */
+.container-projects {
+    background: #f8f8f8;
+    background-position: top;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.project-header {
+    margin: 0 auto 0 auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 80px auto;
+}
+
+.wrapper-reverse {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.project-animation {
+    width: 38%;
+    margin-right: 10%;
+    margin-left: 2%;
+    min-width: 412px;
+}
+
+.project-animation video {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+}
+
+#project-animation-reverse {
+    margin-right: 2%;
+    margin-left: 10%;
+}
+
+.project-text {
+    width: 38%;
+    margin-right: 10%;
+    margin-left: 2%;
+}
+
+#project-text-reverse {
+    margin-left: 10%;
+    margin-right: 2%;
+}
+
+.project-text h2 {
+    margin-top: 30px;
+    margin-top: 0;
+}
+
+.project-text p {
+    margin: 20px 0;
+    line-height: 1.8;
+    font-size: 19px;
+    font-weight: 100;
+    color: #2B2A35;
+}
+
+.project-text a {
+    text-decoration: none;
+    line-height: 1.8;
+    font-size: 19px;
+    font-weight: 100;
+    color: #2B2A35;
+    margin-bottom: 0;
+}
+
+#last-project {
+    margin-bottom: 0;
+    padding-bottom: 80px;
+}
+
+#read-more:hover #underline-text{
+    border-bottom: 2px solid #2B2A35;
+}
+
+.arrow {
+    width: 20px;
+    position: relative;
+    top: 3px;
+    left: 6px;
+    transition: all linear 300ms;
+}
+
+#read-more:hover .arrow {
+    transform: translateX(6px);
+}
+
+
+/* ---------------------------------------------------- Contact ---------------------------------------------------- */
+.contact-header {
+    text-align: center;
+    margin: auto;
+    padding-top: 100px;
+    max-width: 1400px;
+}
+
+.contact-header h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.social-btns {
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+.footer {
+    margin-top: 100px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+.container-contact {
+    background-color: #000000;
+    max-width: 1600px;
+    margin: auto;
+}
+
+
+
+/* --------------------------- Social Media Button --------------------------- */
+.social-btns .btn,
+.social-btns .btn:before,
+.social-btns .btn .fa {
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.social-btns .btn:before {
+    top: 90%;
+    left: -110%;
+}
+.social-btns .btn .fa {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.social-btns .btn.linkedin:before {
+    background-color: #2867B2;
+}
+.social-btns .btn.linkedin .fa {
+    color: #2867B2;
+}
+
+.social-btns .btn.github:before {
+    background-color: #000000;
+}
+.social-btns .btn.github .fa {
+    color: #000000;
+}
+
+.social-btns .btn.google:before {
+    background-color: #dc4a38;
+}
+
+.social-btns .btn.google .fa {
+    color: #dc4a38;
+}
+
+.social-btns .btn.dribbble:before {
+    background-color: #f26798;
+}
+
+.social-btns .btn.dribbble .fa {
+    color: #f26798;
+}
+
+.social-btns .btn:focus:before,
+.social-btns .btn:hover:before {
+    top: -10%;
+    left: -10%;
+}
+
+.social-btns .btn:focus .fa,
+.social-btns .btn:hover .fa {
+    color: #fff;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.social-btns {
+    height: 90px;
+    margin: auto;
+    font-size: 0;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.social-btns .btn {
+    display: inline-block;
+    background-color: #fff;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    margin: 20px 20px 20px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28%;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+    opacity: 0.99;
+}
+
+.social-btns .btn:before {
+    content: '';
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.social-btns .btn .fa {
+    font-size: 38px;
+    vertical-align: middle;
+}
+
+
+
+/* ------------------------------------------------- Media Queries ------------------------------------------------- */
+@media only screen and (max-width: 599px) {
+    .hero-sub-header {
+        width: 95%;
+    }
+    .hero-header {
+        font-size: 2.4rem;
+        width: 95%;
+    }
+    .hero-text {
+        font-size: 5rem;
+    }
+    .footer {
+        padding-top: 100px;
+    }
+    .project-header {
+        padding-top: 80px;
+        padding-bottom: 10px;
+    }
+    .about-header {
+        padding-top: 80px;
+        padding-bottom: 10px;
+    }
+    .contact-header {
+        padding-top: 40px;
+    }
+    .avatar-video {
+        margin-top: 40px !important;
+    }
+    .biography-text {
+        margin-bottom: 80px !important;
+    }
+    #last-project {
+        padding-bottom: 40px;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    h1 {
+        font-size: 3.0rem;
+        margin-right: 2% !important;
+        margin-left: 2% !important;
+    }
+    .wrapper {
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    .wrapper-reverse {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (min-width: 600px ) {
+    .hero-sub-header {
+        width: 80%;
+    }
+    .hero-header {
+        font-size: 3.5rem;
+        width: 80%;
+    }
+    .hero-text {
+        font-size: 7rem;
+    }
+}
+
+@media only screen and (min-width: 980px ) {
+    .hero-sub-header {
+        width: 50%;
+    }
+    .hero-header {
+        font-size: 3.5rem;
+        width: 60%;
+    }
+    .hero-text {
+        font-size: 10rem;
+    }
+}
+
+@media only screen and (max-width: 1085px ) {
+    .avatar-video {
+        width: 90%;
+        max-width: 450px;
+        margin: 40px auto 0 auto;
+        min-width: unset;  
+    }
+    .hero video {
+        width: 90%;
+    }
+    .biography-text {
+        width: 90%;
+        margin: 20px auto 100px auto;
+        text-align: center;
+    }
+    .project-animation {
+        width: 90%;
+        max-width: 450px;
+        margin: 40px auto 0 auto;
+        min-width: unset;  
+    }
+    #project-animation-reverse {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .project-text {
+        width: 90%;
+        margin: 20px auto 40px auto;
+        text-align: center;
+    }
+    #project-text-reverse {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .project-header {
+        padding-bottom: 20px;
+    }
+    .about-header {
+        padding-bottom: 20px;
+    }
+    .wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
